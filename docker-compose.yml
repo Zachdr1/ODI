@@ -1,0 +1,17 @@
+version: '3'
+services:
+  nginx: 
+    build:
+      context: .
+      dockerfile: nginx.Dockerfile
+    volumes:
+      - ./app/dist/spa:/data/www
+    ports:
+      - 85:85
+  detection-service:
+    image: detection-service
+    build: 
+      context: .
+      dockerfile: detection-service.Dockerfile
+    expose:
+      - "5000"
