@@ -1,6 +1,6 @@
 # DLI </br>
 Deep Learning Interface: A web app for interfacing with deep learning algorithms. <br>
-![](DLI/yolov3_route.png) <br/>
+![](yolov3_route.png) <br/>
 
 ## Overview </br>
 DLI is a web based system for using deep learning algorithms and visualizing their results. Currently it only supports object detection in images using the YOLOv3 algorithm (https://pjreddie.com/media/files/papers/YOLOv3.pdf); however, I am planning on adding other algorithms in the future. </br>
