@@ -13,7 +13,7 @@ https://docs.docker.com/install/ </br>
 https://docs.docker.com/compose/ </br>
 
 cd into the DLI directory and run the command below to host DLI </br>
-`docker-compose up --build </br>`
+`docker-compose up --build`
 
 Once everything is done downloading, try going to http://localhost:85/ in a web browser. </br>
 
