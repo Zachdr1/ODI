@@ -8,10 +8,12 @@ services:
       - ./app/dist/spa:/data/www
     ports:
       - 85:85
-  detection-service:
+  detection_service:
     image: detection-service
     build: 
       context: .
       dockerfile: detection-service.Dockerfile
+    volumes:
+      - ./detection_service.py:/ODI/detection_service.py
     expose:
       - "5000"
