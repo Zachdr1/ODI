@@ -2,6 +2,7 @@ from flask import Flask, request, flash, Response, send_file
 from werkzeug.utils import secure_filename
 import shlex, subprocess
 import os
+import time
 
 UPLOAD_FOLDER = './uploaded_files'
 
@@ -23,7 +24,11 @@ def detect():
         os.chdir('./darknet')
         command = f'./darknet detect cfg/yolov3.cfg yolov3.weights ./../{filepath}'
         args = shlex.split(command)
-        subprocess.Popen(args)
+        p = subprocess.Popen(args)
+        # block until process is done (needed for easy loading icon)
+        # should use redis queue and make a new process for checking queue in the future
+        while p.poll() == None:
+            time.sleep(.1)
         os.chdir('./../')
     return Response(status=200)
 
