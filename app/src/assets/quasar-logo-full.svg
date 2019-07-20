@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encdling="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
@@ -7,7 +7,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:sdlipdli="http://sdlipdli.sourceforge.net/DTD/sdlipdli-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="67.407623mm"
    height="62.908276mm"
@@ -15,10 +15,10 @@
    id="svg3570"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="quasar-logo-full.svg">
+   sdlipdli:docname="quasar-logo-full.svg">
   <defs
      id="defs3572" />
-  <sodipodi:namedview
+  <sdlipdli:namedview
      id="base"
      pagecolor="#ffffff"
      bordercolor="#666666"

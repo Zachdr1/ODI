@@ -14,11 +14,10 @@ app.config['SECRET_KEY'] = '\xa8c5\xd7GQ\xca\xa5\xd5?J' + \
 
 @app.route('/detection_service/detect', methods=['GET', 'POST'])
 def detect():
-    if 'file' not in request.files:
+    if 'file' is None:
         return Response(status=400)
-    file = request.files['file']
-    app.logger.info(file)
-    if file:
+    for file in request.files.values():
+        app.logger.info(request.files)
         filepath = f'{UPLOAD_FOLDER}/{secure_filename(file.filename)}'
         file.save(filepath)
         os.chdir('./darknet')
@@ -41,4 +40,4 @@ def results():
         return(Response(status=404))
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+    app.run(host='0.0.0.0')

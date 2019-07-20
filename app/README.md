@@ -1,6 +1,6 @@
-# ODI (odi_app)
+# DLI (dli_app)
 
-Object Detection Interface
+Deep Learning Interface
 
 ## Install the dependencies
 ```bash

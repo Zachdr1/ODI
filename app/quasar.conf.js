@@ -44,7 +44,10 @@ module.exports = function (ctx) {
         'QList',
         'QItem',
         'QItemSection',
-        'QItemLabel'
+        'QItemLabel',
+        'QImg',
+        'QSelect',
+        'QUploader'
       ],
 
       directives: [
@@ -96,9 +99,9 @@ module.exports = function (ctx) {
       // workboxPluginMode: 'InjectManifest',
       // workboxOptions: {}, // only for NON InjectManifest
       manifest: {
-        // name: 'ODI',
-        // short_name: 'ODI',
-        // description: 'Object Detection Interface',
+        // name: 'DLI',
+        // short_name: 'DLI',
+        // description: 'Deep Learning Interface',
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',
@@ -162,7 +165,7 @@ module.exports = function (ctx) {
       builder: {
         // https://www.electron.build/configuration/configuration
 
-        // appId: 'odi_app'
+        // appId: 'dli_app'
       }
     }
   }

@@ -1,8 +1,8 @@
 {
-  "name": "odi_app",
+  "name": "dli_app",
   "version": "0.0.1",
-  "description": "Object Detection Interface",
-  "productName": "ODI",
+  "description": "Deep Learning Interface",
+  "productName": "DLI",
   "cordovaId": "org.cordova.quasar.app",
   "author": "Zach D.",
   "private": true,

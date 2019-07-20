@@ -2,127 +2,75 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          @click="leftDrawerOpen = !leftDrawerOpen"
-          aria-label="Menu"
-        >
-          <q-icon name="menu" />
-        </q-btn>
+        <div class="row items-center q-gutter-lg">
+          <div class="column block">
+            <q-btn
+              flat
+              dense
+              round
+              @click="leftDrawerOpen = !leftDrawerOpen"
+              aria-label="Menu"
+            >
+              <q-icon name="menu" />
+            </q-btn>
+          </div>
+          <div class="column block">
+            <q-toolbar-title>
+              DLI - Deep Learning Interface
+            </q-toolbar-title>
+          </div>
 
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
+          <div class="column block">
+            <q-select color="white" class="full-width" outlined v-model="route" :options="route_options">
+              <template v-slot:append>
+                <q-avatar>
+                  <img src="https://cdn.quasar.dev/logo/svg/quasar-logo.svg">
+                </q-avatar>
+              </template>
+            </q-select>
+          </div>
+        </div>
       </q-toolbar>
     </q-header>
 
     <q-drawer v-model="leftDrawerOpen" bordered content-class="bg-grey-2">
-      <q-list>
-        <q-item-label header>Essential Links</q-item-label>
-        <q-item clickable tag="a" target="_blank" href="https://quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="school" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Docs</q-item-label>
-            <q-item-label caption>quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item
-          clickable
-          tag="a"
-          target="_blank"
-          href="https://github.quasar.dev"
-        >
-          <q-item-section avatar>
-            <q-icon name="code" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Github</q-item-label>
-            <q-item-label caption>github.com/quasarframework</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item
-          clickable
-          tag="a"
-          target="_blank"
-          href="https://chat.quasar.dev"
-        >
-          <q-item-section avatar>
-            <q-icon name="chat" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Discord Chat Channel</q-item-label>
-            <q-item-label caption>chat.quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item
-          clickable
-          tag="a"
-          target="_blank"
-          href="https://forum.quasar.dev"
-        >
-          <q-item-section avatar>
-            <q-icon name="record_voice_over" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Forum</q-item-label>
-            <q-item-label caption>forum.quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item
-          clickable
-          tag="a"
-          target="_blank"
-          href="https://twitter.quasar.dev"
-        >
-          <q-item-section avatar>
-            <q-icon name="rss_feed" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Twitter</q-item-label>
-            <q-item-label caption>@quasarframework</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item
-          clickable
-          tag="a"
-          target="_blank"
-          href="https://facebook.quasar.dev"
-        >
-          <q-item-section avatar>
-            <q-icon name="public" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Facebook</q-item-label>
-            <q-item-label caption>@QuasarFramework</q-item-label>
-          </q-item-section>
-        </q-item>
-      </q-list>
+      <router-view />
     </q-drawer>
 
     <q-page-container>
-      <router-view />
+      <DisplayImage />
     </q-page-container>
   </q-layout>
 </template>
 
 <script>
 import { openURL } from "quasar";
+import DisplayImage from "./../components/display-image";
 
 export default {
   name: "MyLayout",
+  components: {
+    DisplayImage
+  },
   data() {
     return {
-      leftDrawerOpen: this.$q.platform.is.desktop
+      leftDrawerOpen: this.$q.platform.is.desktop,
+      route: "Select a Network",
+      route_options: ["Select a Network", "YOLOv3"]
     };
   },
   methods: {
     openURL
+  },
+  watch: {
+    route(value) {
+      if(value == "Select a Network") {
+        this.$router.push("/")
+      }
+      else if(value == "YOLOv3") {
+        this.$router.push("/yolov3")
+      }
+    }
   }
 };
 </script>
