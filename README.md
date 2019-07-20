@@ -1,2 +1,2 @@
-# ODI
-Object Detection Interface: Upload images and detect objects using neural networks.
+# DLI
+Deep Learning Interface: A web app for interfacing with deep learning algorithms.
