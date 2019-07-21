@@ -1,5 +1,5 @@
 # DLI </br>
-Deep Learning Interface: A web app for interfacing with deep learning algorithms. <br>
+Deep Learning Interface: A containerized web app for interfacing with deep learning algorithms. <br>
 ![](yolov3_route.png) <br/>
 
 ## Overview </br>
